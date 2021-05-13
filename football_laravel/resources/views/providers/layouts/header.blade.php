@@ -121,6 +121,27 @@
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
         </li>
+
+        <!-- lang -->
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+{{--                <i class="far fa-comments"></i>--}}
+                <img src="{{asset('assets/dist/img/country/'.App::getLocale().'.png')}}" height="20px" width="20px">
+            </a>
+            <div class="dropdown-menu dropdown-menu-sm-right dropdown-menu-right" style="min-width: 5rem !important; text-align: center">
+                @foreach (Config::get('app.languages') as $language)
+                    @if ($language != App::getLocale())
+                        <a href="{{ route('langroute', $language) }}" class="dropdown-item">
+                            <!-- Message Start -->
+                            <img src="{{asset('assets/dist/img/country/'.$language.'.png')}}" alt="language" class="img-size-32 img-circle">
+                            <!-- Message End -->
+                        </a>
+                        <div class="dropdown-divider"></div>
+                    @endif
+                @endforeach
+            </div>
+        </li>
+
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>

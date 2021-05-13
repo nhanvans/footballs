@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="2e4a9553-0f9d-4ad3-95a0-e6f0469141bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/slidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/slidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,11 +142,16 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Services" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\app\Services" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\public\assets\dist\img\country" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers" />
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\managers" />
     </key>
   </component>
@@ -163,7 +172,7 @@
       <option name="presentableId" value="Default" />
       <updated>1620784929332</updated>
       <workItem from="1620784930894" duration="4724000" />
-      <workItem from="1620858711453" duration="3239000" />
+      <workItem from="1620858711453" duration="7099000" />
     </task>
     <servers />
   </component>
@@ -171,6 +180,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="484" y="228" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1620871028654">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="484" y="228" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1620871028654" />
     <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1620858734982">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
