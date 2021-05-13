@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\Providers\Footballs\FootballPlaceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::get('language/{lang}', function ($lang) {
 })->name('langroute');
 
 Route::group(['middleware'=>['lang']], function(){
+
+    Route::resource('footballs', FootballPlaceController::class);
 
     Route::get('/', function () {
 //    return view('welcome');

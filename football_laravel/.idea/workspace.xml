@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e4a9553-0f9d-4ad3-95a0-e6f0469141bb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/FootballPlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/FootballPlaceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Footballs/FootballPlace.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Footballs/FootballPlace.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/slidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/slidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -173,6 +174,7 @@
       <updated>1620784929332</updated>
       <workItem from="1620784930894" duration="4724000" />
       <workItem from="1620858711453" duration="7099000" />
+      <workItem from="1620937064007" duration="8319000" />
     </task>
     <servers />
   </component>
@@ -184,10 +186,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="484" y="228" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1620871028654" />
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1620858734982">
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1620937089065">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1620858734982" />
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1620937089065" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1620866045656">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
