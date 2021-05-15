@@ -16,14 +16,14 @@ class CreateDetailsTable extends Migration
         Schema::create('details', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('football_place_id');
-            $table->string('types');
-            $table->string('operation_times');
-            $table->string('prices');
-            $table->string('amenities');
-            $table->string('capacity');
-            $table->string('last_admission_time');
-            $table->string('preparation_time');
-            $table->string('holiday');
+            $table->string('types')->nullable();
+            $table->string('operation_times')->nullable();
+            $table->string('prices')->nullable();
+            $table->string('amenities')->nullable();
+            $table->string('capacity')->nullable();
+            $table->string('last_admission_time')->nullable();
+            $table->string('preparation_time')->nullable();
+            $table->string('holiday')->nullable();
             $table->timestamps();
 //          foreign key
             $table->foreign('football_place_id')->references('id')->on('football_places');

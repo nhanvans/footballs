@@ -11,9 +11,10 @@ class FootballPlaceController extends Controller
     private $repository;
     private $controller;
 
-    public function __construct(FootballPlaceRepository $repository)
+    public function __construct(FootballPlaceRepository $repository, DetailController $controller)
     {
         $this->repository = $repository;
+        $this->controller = $controller;
     }
 
     /**
@@ -53,7 +54,7 @@ class FootballPlaceController extends Controller
         if($request->ajax()){
             $credentials = $request->merge(['utilities'=> $request->utilities ? implode(',', $request->utilities) : '',
                 'allow_view'=> $request->allow_view ? 1 : 0])
-                ->only(['user_id','name','phone','email','website','utilities','max_price','min_price','allow_view','lang']);
+                ->only(['user_id','name','phone','email','website','utilities','max_price','min_price','allow_view']);
             $footballPlace = $this->repository->createFootballPlace($credentials);
 
             return response()->json([

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Providers\Footballs\FootballPlaceController;
+use App\Http\Controllers\Providers\Footballs\DetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::get('language/{lang}', function ($lang) {
 Route::group(['middleware'=>['lang']], function(){
 
     Route::resource('footballs', FootballPlaceController::class);
+    Route::resource('details', DetailController::class);
 
     Route::get('/', function () {
 //    return view('welcome');

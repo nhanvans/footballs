@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e4a9553-0f9d-4ad3-95a0-e6f0469141bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/FootballPlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/FootballPlaceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Footballs/FootballPlace.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Footballs/FootballPlace.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_034746_create_football_places_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_034746_create_football_places_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_035441_create_locations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_035441_create_locations_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_035452_create_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_035452_create_details_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_035504_create_detail_langs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_035504_create_detail_langs_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/vi/football.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vi/football.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/template.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/slidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/slidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,11 +148,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Services" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/plugins" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\public\assets\plugins" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\footballs\details" />
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\app\Services" />
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\public\assets\dist\img\country" />
     </key>
@@ -175,6 +182,8 @@
       <workItem from="1620784930894" duration="4724000" />
       <workItem from="1620858711453" duration="7099000" />
       <workItem from="1620937064007" duration="8319000" />
+      <workItem from="1620974532016" duration="5575000" />
+      <workItem from="1621063328526" duration="3099000" />
     </task>
     <servers />
   </component>
@@ -186,10 +195,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="484" y="228" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1620871028654" />
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1620937089065">
+    <state x="291" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620975157743">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1620937089065" />
+    <state x="291" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1620975157743" />
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1621063336108">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1621063336108" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1620866045656">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

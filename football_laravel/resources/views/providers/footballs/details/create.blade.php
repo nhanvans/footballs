@@ -1,20 +1,4 @@
-@extends('providers.layouts.master')
 
-@section('css-content')
-
-@endsection
-
-@section('script-content')
-    <script !src="">
-        $(function () {
-            $("input[data-bootstrap-switch]").each(function(){
-                $(this).bootstrapSwitch('state', $(this).prop('checked'));
-            })
-        })
-    </script>
-@endsection
-
-@section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
@@ -47,13 +31,13 @@
                     <!-- general form elements -->
                     <div class="card card-primary card-outline">
                         <div class="card-header">
-                            <h5 class="card-title m-0"><i class="fa fa-info-circle"></i> Thông tin cơ bản
+                            <h5 class="card-title m-0"><i class="fa fa-info-circle"></i> Thông tin chi tiết
                             </h5>
                         </div>
                         <!-- form start -->
-                        <form action="{{ route('footballs.store') }}" method="post" accept-charset="UTF-8" id="football_form">
+                        <form action="{{ route('details.store') }}" method="post" accept-charset="UTF-8" id="detail_form">
                             @csrf
-                          @include('providers.footballs.basic_infos.template')
+                          @include('providers.footballs.details.template')
                         </form>
                     </div>
                     <!-- /.card -->
@@ -64,4 +48,3 @@
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
-@endsection

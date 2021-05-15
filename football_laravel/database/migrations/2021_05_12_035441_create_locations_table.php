@@ -17,11 +17,11 @@ class CreateLocationsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('football_place_id');
             $table->string('address');
-            $table->string('country');
-            $table->string('city');
-            $table->string('postcode');
-            $table->string('longitude');
-            $table->string('latitude');
+            $table->string('country')->nullable();
+            $table->string('city')->nullable();
+            $table->string('postcode')->nullable();
+            $table->string('longitude')->nullable();
+            $table->string('latitude')->nullable();
             $table->timestamps();
 //          foreign key
             $table->foreign('football_place_id')->references('id')->on('football_places');

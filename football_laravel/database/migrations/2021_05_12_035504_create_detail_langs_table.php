@@ -16,8 +16,9 @@ class CreateDetailLangsTable extends Migration
         Schema::create('detail_langs', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('detail_id');
-            $table->text('description');
-            $table->text('recommendations');
+            $table->text('description')->nullable();
+            $table->text('recommendations')->nullable();
+            $table->string('lang');
             $table->timestamps();
 //          foreign key
             $table->foreign('detail_id')->references('id')->on('details');

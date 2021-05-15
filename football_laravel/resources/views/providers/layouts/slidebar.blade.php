@@ -56,7 +56,7 @@
                 </li>
                 <li class="nav-header">TRANG THÔNG TIN</li>
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{ route("footballs.create") }}" class="nav-link">
                         <i class="nav-icon fas fa-plus-square"></i>
                         <p>
                             Tạo trang thông tin

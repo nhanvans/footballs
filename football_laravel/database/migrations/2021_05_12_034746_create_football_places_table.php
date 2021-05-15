@@ -16,13 +16,13 @@ class CreateFootballPlacesTable extends Migration
         Schema::create('football_places', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('utilities');
-            $table->string('phone');
-            $table->string('website');
-            $table->string('email');
+            $table->string('utilities')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('website')->nullable();
+            $table->string('email')->nullable();
             $table->boolean('allow_view')->default(false);
-            $table->string('min_price');
-            $table->string('max_price');
+            $table->string('min_price')->nullable();
+            $table->string('max_price')->nullable();
             $table->smallInteger('status')->default(0);
             $table->timestamps();
         });
