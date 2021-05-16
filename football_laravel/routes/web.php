@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Providers\Footballs\FootballPlaceController;
 use App\Http\Controllers\Providers\Footballs\DetailController;
+use App\Http\Controllers\Providers\Footballs\SocialNetworkController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,7 @@ Route::group(['middleware'=>['lang']], function(){
 
     Route::resource('footballs', FootballPlaceController::class);
     Route::resource('details', DetailController::class);
+    Route::resource('social-networks', SocialNetworkController::class);
 
     Route::get('/', function () {
 //    return view('welcome');

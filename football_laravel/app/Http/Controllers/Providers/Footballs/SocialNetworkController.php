@@ -3,19 +3,18 @@
 namespace App\Http\Controllers\Providers\Footballs;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\Providers\Footballs\DetailRepository;
+use App\Repositories\Providers\Footballs\SocialNetworkRepository;
 use App\Services\GetSession;
 use Illuminate\Http\Request;
 
-class DetailController extends Controller
+class SocialNetworkController extends Controller
 {
     private $repository;
     private $controller;
 
-    public function __construct(DetailRepository $repository, SocialNetworkController $controller)
+    public function __construct(SocialNetworkRepository $repository)
     {
         $this->repository = $repository;
-        $this->controller = $controller;
     }
 
     /**
@@ -26,10 +25,10 @@ class DetailController extends Controller
     public function index(Request $request)
     {
         $footballPlaceId = $request->cookie('football_place_id');
-        $detail = $this->repository->getDetailByIdOrFootballPlaceId( null, $footballPlaceId);
-        if(isset($detail))
+        $socialNetwork = $this->repository->getFisrtByFootballPlace($footballPlaceId);
+        if(isset($socialNetwork))
         {
-            return $this->edit($footballPlaceId);
+            return $this->edit($socialNetwork);
         }
         return $this->create();
     }
@@ -41,7 +40,7 @@ class DetailController extends Controller
      */
     public function create()
     {
-        return view('providers.footballs.details.create');
+        return view('providers.footballs.social_networks.create');
     }
 
     /**
@@ -54,8 +53,8 @@ class DetailController extends Controller
     {
 //        $request->merge(['user_id'=>Auth::user()->user_id]);
         if($request->ajax()){
-            $request->merge(['football_place_id' => $request->cookie('football_place_id'),'lang'=>GetSession::getLocale()]);
-            $detail = $this->repository->createAndUpdate($request, null);
+            $request->merge(['football_place_id' => $request->cookie('football_place_id')]);
+            $detail = $this->repository->create($request->all());
 
             return response()->json([
                 'status' => 200,
@@ -85,9 +84,9 @@ class DetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($detail)
+    public function edit($socialNetwork)
     {
-        return view('providers.footballs.details.edit', ['detail' => $detail]);
+        return view('providers.footballs.social_networks.edit', ['detail' => $socialNetwork]);
     }
 
     /**
@@ -100,8 +99,8 @@ class DetailController extends Controller
     public function update(Request $request, $id)
     {
         if ($request->ajax()) {
-            $request->merge(['football_place_id' => $request->cookie('football_place_id'), 'lang' => GetSession::getLocale()]);
-            $detail = $this->repository->createAndUpdate($request, $id);
+            $request->merge(['football_place_id' => $request->cookie('football_place_id')]);
+            $detail = $this->repository->update($request->all(), $id);
             return response()->json([
                 'status' => 200,
                 'error' => null,

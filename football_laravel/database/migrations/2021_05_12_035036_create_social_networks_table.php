@@ -16,12 +16,12 @@ class CreateSocialNetworksTable extends Migration
         Schema::create('social_networks', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('football_place_id');
-            $table->string('facebook');
-            $table->string('twiter');
-            $table->string('youtube');
-            $table->string('instagram');
-            $table->string('zalo');
-            $table->string('lotus');
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('zalo')->nullable();
+            $table->string('lotus')->nullable();
             $table->timestamps();
 //          foreign key
             $table->foreign('football_place_id')->references('id')->on('football_places');

@@ -120,7 +120,7 @@
                 });
             },
             success: function(res){
-                if(res.results.success == true){
+                if(res.status == 200){
                     if($('#check_edit').val() == 1)
                     {
                         Swal.fire({

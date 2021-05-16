@@ -3,16 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2e4a9553-0f9d-4ad3-95a0-e6f0469141bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/FootballPlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/FootballPlaceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_034746_create_football_places_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_034746_create_football_places_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_035441_create_locations_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_035441_create_locations_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_035452_create_details_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_035452_create_details_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_035504_create_detail_langs_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_035504_create_detail_langs_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/vi/football.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vi/football.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/slidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/slidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/DetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/DetailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_035036_create_social_networks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_035036_create_social_networks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/details/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/details/template.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -148,19 +141,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/plugins" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/providers/footballs/locations" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\public\assets\plugins" />
-      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\footballs\details" />
-      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\app\Services" />
-      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\public\assets\dist\img\country" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers" />
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\managers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\footballs\locations" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\footballs\social_networks" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\app\Repositories\Providers\Footballs" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\public\assets\plugins" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\footballs\details" />
     </key>
   </component>
   <component name="RunManager">
@@ -184,6 +178,7 @@
       <workItem from="1620937064007" duration="8319000" />
       <workItem from="1620974532016" duration="5575000" />
       <workItem from="1621063328526" duration="3099000" />
+      <workItem from="1621173065653" duration="4192000" />
     </task>
     <servers />
   </component>
@@ -199,10 +194,14 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="291" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1620975157743" />
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1621063336108">
+    <state x="499" y="176" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1621173703730">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1621063336108" />
+    <state x="499" y="176" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1621173703730" />
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1621173076708">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1621173076708" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1620866045656">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
