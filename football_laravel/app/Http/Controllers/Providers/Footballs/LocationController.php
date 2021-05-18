@@ -11,9 +11,10 @@ class LocationController extends Controller
     private $repository;
     private $controller;
 
-    public function __construct(LocationRepository $repository)
+    public function __construct(LocationRepository $repository, ImageController $controller)
     {
         $this->repository = $repository;
+        $this->controller = $controller;
     }
 
     /**

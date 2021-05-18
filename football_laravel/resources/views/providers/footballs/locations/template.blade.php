@@ -1,43 +1,74 @@
-<div class="card-body">
+<style>
+    #os{
+        position: relative;
+        height: 400px;
+        margin: 0px;
+        width: 100%;
+    }
+    #map {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #f2efe9;
+        border: 1px solid #b7b2b2;
+        border-radius: 2px;
+    }
+    .leaflet-container {
+        cursor: auto !important;
+    }
+</style>
 
+<div class="card-body">
     <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="facebook">Facebook</label>
-                <input type="text" name="facebook" class="form-control" id="facebook">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="twitter">Twitter</label>
-                <input type="text" name="twitter" class="form-control" id="twitter">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                <label for="youtube">Youtube</label>
-                <input type="text" name="youtube" class="form-control" id="youtube">
+        <div id="os">
+            <div id="map">
+
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <div class="form-group">
-                <label for="instagram">Instagram</label>
-                <input type="text" name="instagram" class="form-control" id="instagram">
+                <label for="address">Địa chỉ</label>
+                <input type="text" name="address" class="form-control" id="address">
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="form-group">
-                <label for="zalo">Zalo</label>
-                <input type="text" name="zalo" class="form-control" id="zalo">
+                <label for="country">Quốc gia</label>
+{{--                country-data-default-value=""--}}
+                <select name="country" id="country" class="form-control gds-cr select2" style="width: 100%"
+                        country-data-region-id="gds-cr-one" country-data-default-value="" data-language="en" ></select>
             </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div class="form-group">
-                <label for="lotus">Lotus</label>
-                <input type="text" name="lotus" class="form-control" id="lotus">
+                <label for="city">Tỉnh/Thành phố</label>
+{{--                region-data-default-value=""--}}
+                <select name="city" id="gds-cr-one" region-data-default-value="" class="form-control select2" style="width: 100%"
+                        ></select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="postcode">Mã bưu điện</label>
+                <input type="text" name="postcode" class="form-control" id="postcode">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="longitude">Kinh độ</label>
+                <input type="text" name="longitude" class="form-control" id="longitude">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label for="latitude">Vĩ độ</label>
+                <input type="text" name="latitude" class="form-control" id="latitude">
             </div>
         </div>
 
@@ -49,8 +80,10 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript" src="{{asset('assets/plugins/country/assets/js/geodatasource-cr.js')}}"></script>
 <script !src="">
-    $('#social_form').submit(function(event){
+    $('#location_form').submit(function(event){
         event.preventDefault();
         let url = $(this).attr('action');
         let form_data = new FormData($(this)[0]);
@@ -96,5 +129,68 @@
             }
         })
     })
+
+    // map setting
+    // var mymap = L.map('admin-map-provider').setView([16.0669077,108.2137987], 19);
+    // var mymap = L.map('admin-map-provider',{zoom: 20, center: L.latLng([16.0669077,108.2137987])});
+    // var marker = L.marker([16.0669077,108.2137987]).addTo(mymap);
+    const myIcon = L.icon({
+        iconUrl: '{{ asset("assets/dist/img/iconmap.png") }}',
+        iconSize: [38, 38],
+        iconAnchor: [22, 40],
+        popupAnchor: [-3, -76],
+        shadowUrl: '{{ asset("assets/dist/img/iconmap.png") }}',
+        shadowSize: [38, 38],
+        shadowAnchor: [22, 40]
+    });
+
+    var tileLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png',
+        {
+            attribution: false
+        });
+
+    const longitude = $("#longitude").val() || 108.22700500488283;
+    const latitude = $("#latitude").val() || 16.072537386536663;
+
+    var mymap = L.map('map',
+        {
+            zoomControl: true,
+            layers: [tileLayer]
+            // maxZoom: 18,
+            // minZoom: 6
+        })
+        .setView([latitude,longitude], 50);
+
+    setTimeout(function () { mymap.invalidateSize() }, 800);
+
+    var marker = L.marker([latitude,longitude],{
+        draggable: true,
+        autoPan: true,
+        icon: myIcon,
+        title: "MyPoint"
+    }).addTo(mymap);
+
+    marker.on("dragend",function(e){
+        const changedPos = e.target.getLatLng();
+        $('#longitude').val(changedPos.lng);
+        $('#latitude').val(changedPos.lat);
+    });
+
+    mymap.addEventListener("click",function(e){
+        const changedPos = e.latlng;
+        let latlng = L.latLng(changedPos.lat, changedPos.lng);
+        marker.setLatLng(latlng);
+        $('#longitude').val(changedPos.lng);
+        $('#latitude').val(changedPos.lat);
+    });
+
+    $(".longitude, .latitude").on('change', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        let lon = $("#longitude").val();
+        let lat = $("#latitude").val();
+        let latlng = L.latLng(lat, lon);
+        marker.setLatLng(latlng);
+    });
 
 </script>

@@ -12,9 +12,10 @@ class SocialNetworkController extends Controller
     private $repository;
     private $controller;
 
-    public function __construct(SocialNetworkRepository $repository)
+    public function __construct(SocialNetworkRepository $repository, LocationController $controller)
     {
         $this->repository = $repository;
+        $this->controller = $controller;
     }
 
     /**

@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>AdminLTE 3 | Dashboard</title>
 
     <!-- Google Font: Source Sans Pro -->
@@ -13,6 +14,8 @@
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
+    <!-- map -->
+    <link rel="stylesheet" href="{{ asset('assets/plugins/leaflet/leaflet.css') }}">
     <!-- iCheck -->
     <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
     <!-- JQVMap -->
@@ -33,6 +36,8 @@
     <link rel="stylesheet" href="{{asset('assets/plugins/select2/css/select2.min.css')}}">
 
     <link rel="stylesheet" href="{{ asset('assets/plugins/timepicker/bootstrap-timepicker.min.css') }}">
+    <!-- country -->
+    <link rel="stylesheet" href="{{asset('assets/plugins/country/assets/css/geodatasource-countryflag.css')}}">
 
     <link rel="stylesheet" href="{{ asset('assets/dist/css/main.css') }}">
 
@@ -44,6 +49,8 @@
     <script src="{{ asset('assets/plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="{{ asset('assets/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+    <!-- map -->
+    <script src="{{ asset('assets/plugins/leaflet/leaflet.js') }}"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
         $.widget.bridge('uibutton', $.ui.button)
@@ -77,6 +84,11 @@
     <script src="{{ asset('assets/plugins/select2/js/select2.full.min.js') }}"></script>
 
     <script src="{{ asset('assets/plugins/timepicker/bootstrap-timepicker.min.js') }}"></script>
+
+    <script type="text/javascript" src="{{asset('assets/plugins/country/assets/js/geodatasource-cr.js')}}"></script>
+    <link rel="gettext" type="application/x-po" href="{{asset('assets/plugins/country/languages/vi/LC_MESSAGES/vi.po')}}" />
+    <link rel="gettext" type="application/x-po" href="{{asset('assets/plugins/country/languages/en/LC_MESSAGES/en.po')}}" />
+    <script type="text/javascript" src="{{ asset('assets/plugins/country/assets/js/Gettext.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('assets/dist/js/adminlte.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
@@ -120,6 +132,9 @@
 
 <script !src="">
     const loading_message = "Vui lòng chờ trong giây lát";
+    const remove = "Xoá";
+    const cancel = "Huỷ";
+    const yes = "Đồng ý"
 </script>
 </body>
 </html>
