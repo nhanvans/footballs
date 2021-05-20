@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e4a9553-0f9d-4ad3-95a0-e6f0469141bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/football_laravel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/football_laravel.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/LocationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/LocationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/SocialNetworkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/SocialNetworkController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_05_12_034959_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_05_12_034959_create_images_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/locations/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/locations/template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,20 +138,20 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/assets/dist/img" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\public\assets\dist\img" />
-      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\app\Repositories\Providers\Footballs" />
-      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\footballs\images" />
-      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\public\assets\plugins" />
-      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\footballs\locations" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers" />
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\managers" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\app\Http\Controllers\Providers\Footballs" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\app\Repositories\Providers\Footballs" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\app\Models\Footballs" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\public\assets\dist\img" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\footballs\images" />
     </key>
   </component>
   <component name="RunManager">
@@ -190,6 +178,8 @@
       <workItem from="1621173065653" duration="4192000" />
       <workItem from="1621223697136" duration="2836000" />
       <workItem from="1621319969398" duration="12906000" />
+      <workItem from="1621436632982" duration="803000" />
+      <workItem from="1621507635987" duration="1846000" />
     </task>
     <servers />
   </component>
@@ -209,10 +199,10 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="499" y="176" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1621173703730" />
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1621319969833">
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1621507717594">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1621319969833" />
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1621507717594" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1621224037396">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
