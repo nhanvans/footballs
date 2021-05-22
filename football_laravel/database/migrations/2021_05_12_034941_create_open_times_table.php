@@ -16,7 +16,7 @@ class CreateOpenTimesTable extends Migration
         Schema::create('open_times', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('football_place_id');
-            $table->string('open_time');
+            $table->text('open_time')->nullable();
             $table->timestamps();
 //          foreign key
             $table->foreign('football_place_id')->references('id')->on('football_places');

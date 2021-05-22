@@ -60,7 +60,8 @@ class VideoRepository
         $file_name = $dir.'video'.time().rand(0,500).'.'.$extension;
         !File::exists($baseDir.$dir) ? mkdir($baseDir.$dir, 0777, true) : null;
 //        UploadFileToS3::uploadFile($file, $file_name);
-        Image::make($file)->save($file_name);
+//        Image::make($file)->save($file_name);
+        $file->move($dir, $file_name);
         return $file_name;
     }
 

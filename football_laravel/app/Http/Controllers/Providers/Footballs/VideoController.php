@@ -61,7 +61,7 @@ class VideoController extends Controller
                 'error' => null,
                 'message' => 'create success',
                 'data' => $video,
-                'view' => $this->controller->index($request)->render()
+//                'view' => $this->controller->index($request)->render()
             ]);
 
         }
@@ -106,7 +106,7 @@ class VideoController extends Controller
                 'error' => null,
                 'message' => 'update success',
                 'data' => $video,
-                'view' => $this->controller->index($request)->render()
+//                'view' => $this->controller->index($request)->render()
             ]);
         }
     }

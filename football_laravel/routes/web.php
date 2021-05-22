@@ -7,6 +7,8 @@ use App\Http\Controllers\Providers\Footballs\DetailController;
 use App\Http\Controllers\Providers\Footballs\SocialNetworkController;
 use App\Http\Controllers\Providers\Footballs\LocationController;
 use App\Http\Controllers\Providers\Footballs\ImageController;
+use App\Http\Controllers\Providers\Footballs\VideoController;
+use App\Http\Controllers\Providers\Footballs\OpenTimeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +32,8 @@ Route::group(['middleware'=>['lang']], function(){
     Route::resource('social-networks', SocialNetworkController::class);
     Route::resource('locations', LocationController::class);
     Route::resource('images', ImageController::class);
+    Route::resource('videos', VideoController::class);
+    Route::resource('open-times', OpenTimeController::class);
 
     Route::get('/', function () {
 //    return view('welcome');

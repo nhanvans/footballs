@@ -152,5 +152,16 @@ return [
     'holiday' => [
         'all_holiday' => 'Các ngày nghỉ trong năm',
         'no_holiday' => 'Không nghỉ lễ'
+    ],
+    'open_times' => [
+        'day' => [
+            'MONDAY' => 'Thứ hai',
+            'TUESDAY' => 'Thứ ba',
+            'WEDNESDAY' => 'Thứ tư',
+            'THURSDAY' => 'Thứ năm',
+            'FRIDAY' => 'Thứ sáu',
+            'SATURDAY' => 'Thứ bảy',
+            'SUNDAY' => 'Chủ nhật'
+        ]
     ]
 ];

@@ -11,10 +11,10 @@ class ImageController extends Controller
     private $repository;
     private $controller;
 
-    public function __construct(ImageRepository $repository)
+    public function __construct(ImageRepository $repository, VideoController $controller)
     {
         $this->repository = $repository;
-//        $this->controller = $controller;
+        $this->controller = $controller;
     }
 
     /**
