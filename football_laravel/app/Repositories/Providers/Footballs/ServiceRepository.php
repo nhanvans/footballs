@@ -1,8 +1,13 @@
 <?php
 namespace App\Repositories\Providers\Footballs;
 
+use App\Models\Footballs\Service;
+use App\Models\Footballs\ServiceLang;
 use App\Models\Footballs\TypeService;
 use App\Models\Footballs\TypeServiceLang;
+use App\Services\GetSession;
+use Illuminate\Support\Facades\File;
+use Image;
 
 class ServiceRepository
 {
@@ -81,7 +86,7 @@ class ServiceRepository
             foreach($data['food']['old'] as $food_id => $old_food)
             {
                 $n++;
-                $food = FoodDrink::find($food_id);
+                $food = Service::find($food_id);
                 if($food)
                 {
                     $time = $n.'a'.time();
@@ -110,7 +115,7 @@ class ServiceRepository
                     ]);
                     isset($food->currentLang) ?
                         $food->currentLang->update(['food_name' => $old_food['name']]) :
-                        FoodDrinkLang::create([
+                        ServiceLang::create([
                             'food_drink_id' => $food->id,
                             'food_name' => $old_food['name'],
                             'lang' => $current_lang
@@ -120,51 +125,54 @@ class ServiceRepository
         }
     }
 
-    public function createFood($data,$category_id,$food_place_id,$n,$current_lang)
+    public function createFood($data,$typeServiceid,$footballPlaceId,$n,$current_lang)
     {
         $s3_key = '';
         $image_valid_extensions = ['jpg','png','jpeg', 'JPG', 'JPEG', 'PNG', 'jfif'];
         if($data['image'] != 'undefined' && in_array($data['image']->getClientOriginalExtension(),$image_valid_extensions))
         {
             $time = $n.'a'.time();
-            $s3_key = 'images/foods/'.$food_place_id.'/'.$category_id.'/'.$time.'.'.$data['image']->getClientOriginalExtension();
-            UploadFileToS3::uploadImage($data['image'], $s3_key);
+            $s3_key = 'images/footballs/'.$footballPlaceId.'/'.$typeServiceid.'/'.$time.'.'.$data['image']->getClientOriginalExtension();
+            $dir = 'images/footballs/'.$footballPlaceId.'/'.$typeServiceid.'/';
+            $baseDir = public_path().'/';
+            !File::exists($baseDir.$dir) ? mkdir($baseDir.$dir, 0777, true) : null;
+            Image::make($data['image'])->save($s3_key);
         }
-        $food_drink = FoodDrink::create([
-            'food_category_id' => $category_id,
+        $services = Service::create([
+            'type_service_id' => $typeServiceid,
             'price' => $data['price'],
             'image' => $s3_key
         ]);
-        FoodDrinkLang::create([
-            'food_drink_id' => $food_drink->id,
-            'food_name' => $data['name'],
+        ServiceLang::create([
+            'service_id' => $services->id,
+            'name' => $data['name'],
             'lang' => $current_lang
         ]);
     }
 
     public function delete($request)
     {
-        if($request->type == 'food')
+        if($request->type == 'service')
         {
-            $food = FoodDrink::find($request->id);
-            $this->deleteFood($food);
+            $service = Service::find($request->id);
+            $this->deleteService($service);
         }else {
-            $category = FoodCategory::find($request->id);
-            foreach($category->foodDrinks as $food)
+            $typeService = TypeService::find($request->id);
+            foreach($typeService->services as $service)
             {
-                $this->deleteFood($food);
+                $this->deleteService($service);
             }
-            $category->delete();
+            $typeService->delete();
         }
     }
 
-    public function deleteFood($food)
+    public function deleteService($service)
     {
-        if($food->image != '')
+        if($service->image != '')
         {
-            UploadFileToS3::delete($food->image);
+            @unlink($service->image);
         }
-        $food->delete();
+        $service->delete();
     }
 
 }

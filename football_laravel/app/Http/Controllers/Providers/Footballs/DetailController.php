@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Providers\Footballs;
 
 use App\Http\Controllers\Controller;
+use App\Models\Footballs\Detail;
 use App\Repositories\Providers\Footballs\DetailRepository;
 use App\Services\GetSession;
 use Illuminate\Http\Request;
@@ -29,7 +30,7 @@ class DetailController extends Controller
         $detail = $this->repository->getDetailByIdOrFootballPlaceId( null, $footballPlaceId);
         if(isset($detail))
         {
-            return $this->edit($footballPlaceId);
+            return $this->edit($detail);
         }
         return $this->create();
     }
@@ -85,9 +86,9 @@ class DetailController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($detail)
+    public function edit(Detail $detail)
     {
-        return view('providers.footballs.details.edit', ['detail' => $detail]);
+        return response(view('providers.footballs.details.edit', ['detail' => $detail]));
     }
 
     /**

@@ -136,7 +136,7 @@
 <!-- Bootstrap Switch -->
 <script src="{{ asset('assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js ') }}"></script>
 <script !src="">
-    var delete_url = "{{route('menu.delete')}}";
+    var delete_url = "{{route('services.delete')}}";
     var delete_food_title = "{{trans('foods.menu.delete_food_title')}}";
     var delete_category_title = "{{trans('foods.menu.delete_category_title')}}";
     var category_name_lb = "{{trans('foods.menu.category_name')}}";
@@ -149,7 +149,7 @@
     var is_positive_integer_message = "{{trans('foods.menu.rules.is_positive_integer')}}";
     var category_required_message = "{{trans('foods.menu.rules.category_required')}}";
     var price_max_length_message = "{{trans('foods.menu.rules.price_max_length')}}";
-    var url_list_page = "{{route('manager.pageList', ['type' => 'food'])}}";
+{{--    var url_list_page = "{{route('manager.pageList', ['type' => 'food'])}}";--}}
     var is_unique_message = "{{trans('foods.menu.rules.is_unique_message')}}";
     $.ajaxSetup({
         headers: {

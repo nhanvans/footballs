@@ -89,7 +89,8 @@ class FootballPlaceController extends Controller
      */
     public function edit($id)
     {
-        //
+        $footballPlace = $this->repository->getFootballPlaceById($id);
+        return response(view('providers.footballs.basic_infos.edit',compact('footballPlace')))->withCookie('football_place_id', $id);
     }
 
     /**

@@ -3,18 +3,18 @@
 namespace App\Http\Controllers\Providers\Footballs;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\Providers\Footballs\OpenTimeRepository;
+use App\Repositories\Providers\Footballs\ServiceRepository;
 use Illuminate\Http\Request;
 
-class OpenTimeController extends Controller
+class ServiceController extends Controller
 {
     private $repository;
     private $controller;
 
-    public function __construct(OpenTimeRepository $repository, ServiceController $controller)
+    public function __construct(ServiceRepository $repository)
     {
         $this->repository = $repository;
-        $this->controller = $controller;
+//        $this->controller = $controller;
     }
 
     /**
@@ -25,10 +25,10 @@ class OpenTimeController extends Controller
     public function index(Request $request)
     {
         $footballPlaceId = $request->cookie('football_place_id');
-        $openTime = $this->repository->getOpenTimeFirstByFootballPlaceId($footballPlaceId);
-        if(isset($openTime))
+        $typeServices = $this->repository->getAllTypeServiceByFootballPlaceId($footballPlaceId);
+        if(count($typeServices) > 0)
         {
-            return $this->edit($openTime);
+            return $this->edit($typeServices);
         }
         return $this->create();
     }
@@ -40,7 +40,7 @@ class OpenTimeController extends Controller
      */
     public function create()
     {
-        return view('providers.footballs.open_times.create');
+        return view('providers.footballs.services.create', ['typeServices' => []]);
     }
 
     /**
@@ -54,17 +54,13 @@ class OpenTimeController extends Controller
 //        $request->merge(['user_id'=>Auth::user()->user_id]);
         if($request->ajax()){
             $request->merge(['football_place_id' => $request->cookie('football_place_id')]);
-            $openTimeRequest = $request->except(['_token','football_place_id']);
-            $openTime = $this->repository->create([
-                'football_place_id' => $request->football_place_id,
-                'open_time' => json_encode($openTimeRequest)
-            ]);
+            $detail = $this->repository->createMenu($request);
 
             return response()->json([
                 'status' => 200,
                 'error' => null,
                 'message' => 'create success',
-                'data' => $openTime,
+                'data' => $detail,
                 'view' => $this->controller->index($request)->render()
             ]);
 
@@ -88,9 +84,9 @@ class OpenTimeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($openTime)
+    public function edit($typeServices)
     {
-        return view('providers.footballs.open_times.edit', ['openTime' => $openTime]);
+        return view('providers.footballs.services.edit', ['typeServices' => $typeServices]);
     }
 
     /**
@@ -102,21 +98,7 @@ class OpenTimeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if ($request->ajax()) {
-            $request->merge(['football_place_id' => $request->cookie('football_place_id')]);
-            $openTimeRequest = $request->except(['_token','football_place_id','_method']);
-            $openTime = $this->repository->update([
-                'football_place_id' => $request->football_place_id,
-                'open_time' => json_encode($openTimeRequest)
-            ],$id);
-            return response()->json([
-                'status' => 200,
-                'error' => null,
-                'message' => 'update success',
-                'data' => $openTime,
-                'view' => $this->controller->index($request)->render()
-            ]);
-        }
+
     }
 
     /**
@@ -128,5 +110,19 @@ class OpenTimeController extends Controller
     public function destroy(Request $request, $id)
     {
 
+    }
+
+    public function delete(Request $request)
+    {
+        if ($request->ajax()) {
+            $datas = $this->repository->delete($request);
+            return response()->json([
+                'status' => 200,
+                'error' => null,
+                'message' => 'Delete success',
+                'data' => '',
+                'view' => ''
+            ]);
+        }
     }
 }

@@ -34,11 +34,13 @@
                             <h5 class="card-title m-0"><i class="fa fa-info-circle"></i> Thông tin chi tiết
                             </h5>
                         </div>
-                        <!-- form start -->
-                        <form action="{{ route('details.store') }}" method="post" accept-charset="UTF-8" id="detail_form">
-                            @csrf
-                          @include('providers.footballs.details.template')
-                        </form>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form action="{{ route('details.store') }}" method="post" accept-charset="UTF-8" id="detail_form">
+                                @csrf
+                              @include('providers.footballs.details.template')
+                            </form>
+                        </div>
                     </div>
                     <!-- /.card -->
 

@@ -9,6 +9,7 @@ use App\Http\Controllers\Providers\Footballs\LocationController;
 use App\Http\Controllers\Providers\Footballs\ImageController;
 use App\Http\Controllers\Providers\Footballs\VideoController;
 use App\Http\Controllers\Providers\Footballs\OpenTimeController;
+use App\Http\Controllers\Providers\Footballs\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,8 @@ Route::group(['middleware'=>['lang']], function(){
     Route::resource('images', ImageController::class);
     Route::resource('videos', VideoController::class);
     Route::resource('open-times', OpenTimeController::class);
+    Route::resource('services', ServiceController::class);
+    Route::delete('services/delete', 'ServiceController@delete')->name('services.delete');
 
     Route::get('/', function () {
 //    return view('welcome');

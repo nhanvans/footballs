@@ -134,7 +134,8 @@
     const loading_message = "Vui lòng chờ trong giây lát";
     const remove = "Xoá";
     const cancel = "Huỷ";
-    const yes = "Đồng ý"
+    const yes = "Đồng ý";
+    const save = "Lưu"
 </script>
 </body>
 </html>
