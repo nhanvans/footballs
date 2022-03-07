@@ -93,47 +93,46 @@
         to {top:0; opacity:1}
     }
 </style>
-<div class="card-body">
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="alert alert-info alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h5><i class="icon fa fa-info"></i>  Thông báo!</h5>
-                Chúng tôi sẽ hiển thị những video này trong trang của Quý vị trên trang web football.vn.
-            </div>
-        </div>
-        <div class="col-sm-12">
-            <div class="container--border-dashed" onclick="selectFile()">
-                <div class="row">
-                    <div class="gallery js-video" id="general">
-                        <?php $i=0;?>
-                        @if(isset($videos) && $videos->links != null  )
-                            @foreach(explode(',',$videos->links) as $video)
-                                <div class='col-sm-4' id='{{$i}}'>
-                                    <video src="{{config('app.s3.link').$video}}" style='height:200px;width:100%;border:1px solid grey' controls></video>
-                                    <a href="javascript:;" data-url="{{route('videos.destroy',['id'=> $videos->id])}}" onclick="deleteFile(event, '{{$i}}', '{{$video}}')" class="deleteImage"><p style="text-align: center;padding-top: 5px"><em class="fa fa-trash" style='font-size:1.5em'></em>@lang('public.remove')</p></a>
-                                </div>
-                                <?php $i++; ?>
-                            @endforeach
-                        @endif
-                    </div>
-                </div>
-                <div class="center-parent ">
-                    <i class="far fa-fw fa-plus-square fa-2x center-me"></i>
-                </div>
-            </div>
-            <input style="display:none" id="js-files" accept="video/*" multiple="" onchange="filesPreview(this,'general',3,500)" name="files_path[]" type="file">
-            <input name="format_file" type="hidden" value="mp4,mpeg,ogg,webm,3gp,mov,flv,avi,wmv,ts">
-            <input name="max_id" type="hidden" value="">
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-info"></i>  Thông báo!</h5>
+            Chúng tôi sẽ hiển thị những video này trong trang của Quý vị trên trang web football.vn.
         </div>
     </div>
-    <div class="clearfix"></div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <button type="button" class="btn btn-primary" onclick="next(event)" style="width: 100%">Tiếp tục</button>
+    <div class="col-sm-12">
+        <div class="container--border-dashed" onclick="selectFile()">
+            <div class="row">
+                <div class="gallery js-video" id="general">
+                    <?php $i=0;?>
+                    @if(isset($videos) && $videos->links != null  )
+                        @foreach(explode(',',$videos->links) as $video)
+                            <div class='col-sm-4' id='{{$i}}'>
+                                <video src="{{config('app.s3.link').$video}}" style='height:200px;width:100%;border:1px solid grey' controls></video>
+                                <a href="javascript:;" data-url="{{route('videos.destroy',['id'=> $videos->id])}}" onclick="deleteFile(event, '{{$i}}', '{{$video}}')" class="deleteImage"><p style="text-align: center;padding-top: 5px"><em class="fa fa-trash" style='font-size:1.5em'></em>@lang('public.remove')</p></a>
+                            </div>
+                            <?php $i++; ?>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+            <div class="center-parent ">
+                <i class="far fa-fw fa-plus-square fa-2x center-me"></i>
+            </div>
+        </div>
+        <input style="display:none" id="js-files" accept="video/*" multiple="" onchange="filesPreview(this,'general',3,500)" name="files_path[]" type="file">
+        <input name="format_file" type="hidden" value="mp4,mpeg,ogg,webm,3gp,mov,flv,avi,wmv,ts">
+        <input name="max_id" type="hidden" value="">
     </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-md-12">
+        <button type="button" class="btn btn-primary" onclick="next(event)" style="width: 100%">Tiếp tục</button>
     </div>
 </div>
 <div id="modal_image" class="modal">
@@ -151,13 +150,14 @@
 <!-- Bootstrap Switch -->
 <script src="{{ asset('assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js ') }}"></script>
 <script !src="">
-    const url_delete = "{{route('videos.destroy',['video_id'])}}";
-    const delete_file = "{{trans('public.delete_video')}}";
-    const urlOpenTimeIndex = "{{ route('open-times.index') }}";
+
 
     // chuyen trang
 
     $(window).ready(function(){
+        let url_delete = "{{route('videos.destroy',['video_id'])}}";
+        let delete_file = "{{trans('public.delete_video')}}";
+        let urlOpenTimeIndex = "{{ route('open-times.index') }}";
         changeDisplayIcon()
     })
 

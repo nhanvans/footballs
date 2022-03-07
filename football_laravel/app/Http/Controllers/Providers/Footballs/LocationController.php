@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Providers\Footballs;
 
 use App\Http\Controllers\Controller;
+use App\Models\Footballs\Location;
 use App\Repositories\Providers\Footballs\LocationRepository;
 use Illuminate\Http\Request;
 
@@ -84,9 +85,9 @@ class LocationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($location)
+    public function edit(Location $location)
     {
-        return view('providers.footballs.locations.edit', ['detail' => $location]);
+        return view('providers.footballs.locations.edit', ['location' => $location]);
     }
 
     /**

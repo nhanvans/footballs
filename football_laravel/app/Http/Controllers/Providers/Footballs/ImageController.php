@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Providers\Footballs;
 
 use App\Http\Controllers\Controller;
+use App\Models\Footballs\Image;
 use App\Repositories\Providers\Footballs\ImageRepository;
 use Illuminate\Http\Request;
 
@@ -84,7 +85,7 @@ class ImageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($image)
+    public function edit(Image $image)
     {
         return view('providers.footballs.images.edit', ['image' => $image]);
     }

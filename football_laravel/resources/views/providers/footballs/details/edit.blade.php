@@ -25,11 +25,13 @@
                 <div class="col-md-12">
                     <!-- general form elements -->
                     <div class="card card-primary card-outline">
-                        <!-- form start -->
-                        <form action="{{ route('details.update', $detail->id) }}" method="post" accept-charset="UTF-8" id="detail_form">
-                            @csrf
-                            @include('providers.footballs.details.template')
-                        </form>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form action="{{ route('details.update', $detail->id) }}" method="post" accept-charset="UTF-8" id="detail_form">
+                                @csrf
+                                @include('providers.footballs.details.template')
+                            </form>
+                        </div>
                     </div>
                     <!-- /.card -->
 

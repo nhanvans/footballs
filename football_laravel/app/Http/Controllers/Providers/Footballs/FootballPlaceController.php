@@ -112,7 +112,7 @@ class FootballPlaceController extends Controller
             'error' => null,
             'message' => 'update success',
             'data' => $footballPlace,
-            'view' => $this->controller->index($request)->render()
+//            'view' => $this->controller->index($request)->render()
         ])->withCookie('football_place_id', $footballPlace->id);
     }
 

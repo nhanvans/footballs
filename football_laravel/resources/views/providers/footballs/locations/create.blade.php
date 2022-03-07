@@ -34,11 +34,13 @@
                             <h5 class="card-title m-0"><i class="fa fa-info-circle"></i> Vị trí toạ lạc
                             </h5>
                         </div>
-                        <!-- form start -->
-                        <form action="{{ route('locations.store') }}" method="post" accept-charset="UTF-8" id="location_form">
-                            @csrf
-                          @include('providers.footballs.locations.template')
-                        </form>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form action="{{ route('locations.store') }}" method="post" accept-charset="UTF-8" id="location_form">
+                                @csrf
+                              @include('providers.footballs.locations.template')
+                            </form>
+                        </div>
                     </div>
                     <!-- /.card -->
 

@@ -3,16 +3,38 @@
   <component name="ChangeListManager">
     <list default="true" id="2e4a9553-0f9d-4ad3-95a0-e6f0469141bb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/DetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/DetailController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/FootballPlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/FootballPlaceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/ImageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/ImageController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/LocationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/LocationController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/OpenTimeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/OpenTimeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Providers/Footballs/ServiceRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Providers/Footballs/ServiceRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/ServiceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/ServiceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/SocialNetworkController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/SocialNetworkController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/vi/public.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/vi/public.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/details/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/details/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/template.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/details/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/details/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/details/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/details/template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/edit_tabs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/edit_tabs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/images/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/images/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/images/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/images/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/images/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/images/template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/locations/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/locations/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/locations/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/locations/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/locations/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/locations/template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/open_times/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/open_times/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/open_times/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/open_times/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/open_times/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/open_times/template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/services/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/services/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/services/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/services/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/services/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/services/template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/social_networks/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/social_networks/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/social_networks/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/social_networks/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/social_networks/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/social_networks/template.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/videos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/videos/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/videos/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/videos/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/videos/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/videos/template.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,6 +219,13 @@
       <workItem from="1622706667290" duration="2800000" />
       <workItem from="1626620617842" duration="857000" />
       <workItem from="1627636460708" duration="9970000" />
+      <workItem from="1627736778582" duration="5078000" />
+      <workItem from="1627809626592" duration="5068000" />
+      <workItem from="1627900062161" duration="1168000" />
+      <workItem from="1627964414479" duration="3074000" />
+      <workItem from="1628483780977" duration="942000" />
+      <workItem from="1628668406133" duration="600000" />
+      <workItem from="1646643511429" duration="342000" />
     </task>
     <servers />
   </component>
@@ -204,25 +233,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="484" y="228" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1621675006079">
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1646643534886">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="484" y="228" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1621675006079" />
-    <state x="291" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1620975157743">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="291" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.834@0.0.1536.834" timestamp="1620975157743" />
-    <state x="499" y="176" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1622361781411">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="499" y="176" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.834@0.0.1536.834" timestamp="1622361781411" />
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1627636993316">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1627636993316" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1621758459221">
-      <screen x="0" y="0" width="1536" height="834" />
-    </state>
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.834@0.0.1536.834" timestamp="1621758459221" />
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1646643534886" />
   </component>
 </project>

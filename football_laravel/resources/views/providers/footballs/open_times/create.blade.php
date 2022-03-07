@@ -34,11 +34,13 @@
                             <h5 class="card-title m-0"><i class="fa fa-info-circle"></i> Thời gian mở cửa
                             </h5>
                         </div>
-                        <!-- form start -->
-                        <form action="{{ route('open-times.store') }}" method="post" accept-charset="UTF-8" id="open_time_form">
-                            @csrf
-                          @include('providers.footballs.open_times.template')
-                        </form>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form action="{{ route('open-times.store') }}" method="post" accept-charset="UTF-8" id="open_time_form">
+                                @csrf
+                              @include('providers.footballs.open_times.template')
+                            </form>
+                        </div>
                     </div>
                     <!-- /.card -->
 

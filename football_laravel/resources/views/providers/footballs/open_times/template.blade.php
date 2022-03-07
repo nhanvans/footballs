@@ -2,7 +2,7 @@
 <!-- iCheck -->
 <link rel="stylesheet" href="{{ asset('assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
 
-<div class="card-body">
+
 
     @if(isset($openTime))
         @foreach($openTime as $key => $value)
@@ -93,7 +93,6 @@
             <button type="submit" class="btn btn-primary" style="width: 100%">Tiếp tục</button>
         </div>
     </div>
-</div>
 <script !src="">
     $.ajaxSetup({
         headers: {

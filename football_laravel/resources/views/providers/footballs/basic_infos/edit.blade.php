@@ -40,18 +40,18 @@
             <div class="row">
                 <div class="col-md-12">
                     <!-- general form elements -->
-                    <div class="card card-dark card-outline">
-                    <div class="card-header">
-                        @include('providers.footballs.edit_tabs')
-                    </div>
-                    </div>
                     <div class="card card-primary card-outline">
-
-                        <!-- form start -->
-                        <form action="{{ route('footballs.update', $footballPlace->id) }}" method="post" accept-charset="UTF-8" id="football_form">
-                            @csrf
-                            @include('providers.footballs.basic_infos.template')
-                        </form>
+                        <div class="card-header">
+                            @include('providers.footballs.edit_tabs')
+                        </div>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form action="{{ route('footballs.update', $footballPlace->id) }}" method="post" accept-charset="UTF-8" id="football_form">
+                                @csrf
+                                @method('PUT')
+                                @include('providers.footballs.basic_infos.template')
+                            </form>
+                        </div>
                     </div>
                     <!-- /.card -->
 

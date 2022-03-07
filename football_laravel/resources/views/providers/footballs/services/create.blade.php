@@ -34,11 +34,13 @@
                             <h5 class="card-title m-0"><i class="fa fa-info-circle"></i> Dịch vụ
                             </h5>
                         </div>
-                        <!-- form start -->
-                        <form action="{{ route('services.store') }}" method="post" accept-charset="UTF-8" id="service_form">
-                            @csrf
-                          @include('providers.footballs.services.template')
-                        </form>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form action="{{ route('services.store') }}" method="post" accept-charset="UTF-8" id="service_form">
+                                @csrf
+                              @include('providers.footballs.services.template')
+                            </form>
+                        </div>
                     </div>
                     <!-- /.card -->
 

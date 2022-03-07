@@ -34,7 +34,6 @@
         }
     }
 </style>
-<div class="card-body">
     <div id="menu">
         @if(empty($typeServices))
             <div id="1" class="new">
@@ -132,7 +131,6 @@
             <button type="submit" class="btn btn-primary" style="width: 100%">Tiếp tục</button>
         </div>
     </div>
-</div>
 <!-- Bootstrap Switch -->
 <script src="{{ asset('assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js ') }}"></script>
 <script !src="">

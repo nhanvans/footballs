@@ -50,11 +50,13 @@
                             <h5 class="card-title m-0"><i class="fa fa-info-circle"></i> Thông tin cơ bản
                             </h5>
                         </div>
-                        <!-- form start -->
-                        <form action="{{ route('footballs.store') }}" method="post" accept-charset="UTF-8" id="football_form">
-                            @csrf
-                          @include('providers.footballs.basic_infos.template')
-                        </form>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form action="{{ route('footballs.store') }}" method="post" accept-charset="UTF-8" id="football_form">
+                                @csrf
+                              @include('providers.footballs.basic_infos.template')
+                            </form>
+                        </div>
                     </div>
                     <!-- /.card -->
 

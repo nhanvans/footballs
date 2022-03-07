@@ -93,45 +93,43 @@
         to {top:0; opacity:1}
     }
 </style>
-<div class="card-body">
 
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="alert alert-info alert-dismissible">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-                <h5><i class="icon fa fa-info"></i>  Thông báo!</h5>
-                Chúng tôi sẽ hiển thị những hình ảnh này trong trang của Quý vị trên trang web football.vn.
-            </div>
-        </div>
-        <div class="col-sm-12">
-            <div class="container--border-dashed" onclick="selectFile()">
-                <div class="row">
-                    <div class="gallery" id="general">
-                        <?php $i=0;?>
-                        @if(isset($images) && $images->images != '')
-                            @foreach(explode(',',$images->images) as $image)
-                                <div class='col-sm-3' id='{{$i}}'>
-                                    <img src="{{config('app.s3.link').$image}}" style='height:150px;width:100%;border:1px solid grey' onclick="showModal(event, '{{config('app.s3.link').$image}}')">
-                                    <a href="javascript:;" data-url="{{route('images.destroy',['id'=>$images->id])}}" onclick="deleteImage(event, '{{$i}}', '{{$image}}')" class="deleteImage"><p style="text-align: center;padding-top: 5px"><i class="fa fa-trash" style='font-size:1.5em'></i>@lang('public.remove')</p></a>
-                                </div>
-                                <?php $i++; ?>
-                            @endforeach
-                        @endif
-                    </div>
-                </div>
-                <div class="center-parent ">
-                    <i class="far fa-fw fa-plus-square fa-2x center-me"></i>
-                </div>
-            </div>
-            <input type="file" name="images[]" id="imgInp" style="display: none" accept="image/x-png, image/jpeg, image/jpg" multiple onchange="imagesPreview(this,'general')">
+<div class="row">
+    <div class="col-sm-12">
+        <div class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h5><i class="icon fa fa-info"></i>  Thông báo!</h5>
+            Chúng tôi sẽ hiển thị những hình ảnh này trong trang của Quý vị trên trang web football.vn.
         </div>
     </div>
-    <div class="clearfix"></div>
-
-    <div class="row">
-        <div class="col-md-12">
-            <button type="submit" class="btn btn-primary" style="width: 100%">Tiếp tục</button>
+    <div class="col-sm-12">
+        <div class="container--border-dashed" onclick="selectFile()">
+            <div class="row">
+                <div class="gallery" id="general">
+                    <?php $i=0;?>
+                    @if(isset($images) && $images->images != '')
+                        @foreach(explode(',',$images->images) as $image)
+                            <div class='col-sm-3' id='{{$i}}'>
+                                <img src="{{config('app.s3.link').$image}}" style='height:150px;width:100%;border:1px solid grey' onclick="showModal(event, '{{config('app.s3.link').$image}}')">
+                                <a href="javascript:;" data-url="{{route('images.destroy',['id'=>$images->id])}}" onclick="deleteImage(event, '{{$i}}', '{{$image}}')" class="deleteImage"><p style="text-align: center;padding-top: 5px"><i class="fa fa-trash" style='font-size:1.5em'></i>@lang('public.remove')</p></a>
+                            </div>
+                            <?php $i++; ?>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+            <div class="center-parent ">
+                <i class="far fa-fw fa-plus-square fa-2x center-me"></i>
+            </div>
         </div>
+        <input type="file" name="images[]" id="imgInp" style="display: none" accept="image/x-png, image/jpeg, image/jpg" multiple onchange="imagesPreview(this,'general')">
+    </div>
+</div>
+<div class="clearfix"></div>
+
+<div class="row">
+    <div class="col-md-12">
+        <button type="submit" class="btn btn-primary" style="width: 100%">Tiếp tục</button>
     </div>
 </div>
 <div id="modal_image" class="modal">
@@ -149,7 +147,6 @@
 <!-- Bootstrap Switch -->
 <script src="{{ asset('assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js ') }}"></script>
 <script !src="">
-    const title_delete_image = "Bạn muốn xóa hình ảnh này ?";
     $(document).ready(function() {
         $.ajaxSetup({
             headers: {
@@ -251,6 +248,7 @@
 
     function deleteImage(event, div_id, image)
     {
+        let title_delete_image = "Bạn muốn xóa hình ảnh này ?";
         event.stopPropagation();
         let url = $("#"+div_id).children('a').attr('data-url');
         Swal.fire({

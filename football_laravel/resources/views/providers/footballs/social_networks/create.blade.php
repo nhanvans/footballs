@@ -34,11 +34,13 @@
                             <h5 class="card-title m-0"><i class="fa fa-info-circle"></i> Kênh mạng xã hội
                             </h5>
                         </div>
-                        <!-- form start -->
-                        <form action="{{ route('social-networks.store') }}" method="post" accept-charset="UTF-8" id="social_form">
-                            @csrf
-                          @include('providers.footballs.social_networks.template')
-                        </form>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form action="{{ route('social-networks.store') }}" method="post" accept-charset="UTF-8" id="social_form">
+                                @csrf
+                              @include('providers.footballs.social_networks.template')
+                            </form>
+                        </div>
                     </div>
                     <!-- /.card -->
 

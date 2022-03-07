@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Providers\Footballs;
 
 use App\Http\Controllers\Controller;
+use App\Models\Footballs\OpenTime;
 use App\Repositories\Providers\Footballs\OpenTimeRepository;
 use Illuminate\Http\Request;
 
@@ -88,7 +89,7 @@ class OpenTimeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($openTime)
+    public function edit(OpenTime $openTime)
     {
         return view('providers.footballs.open_times.edit', ['openTime' => $openTime]);
     }

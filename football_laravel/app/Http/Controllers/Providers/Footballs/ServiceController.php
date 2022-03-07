@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Providers\Footballs;
 
 use App\Http\Controllers\Controller;
+use App\Models\Footballs\Service;
 use App\Repositories\Providers\Footballs\ServiceRepository;
 use Illuminate\Http\Request;
 
@@ -84,7 +85,7 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($typeServices)
+    public function edit(Service $typeServices)
     {
         return view('providers.footballs.services.edit', ['typeServices' => $typeServices]);
     }

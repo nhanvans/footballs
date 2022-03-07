@@ -34,11 +34,13 @@
                             <h5 class="card-title m-0"><i class="fa fa-info-circle"></i> Video
                             </h5>
                         </div>
-                        <!-- form start -->
-                        <form action="{{ route('videos.store') }}" method="post" accept-charset="UTF-8" id="video_form">
-                            @csrf
-                          @include('providers.footballs.videos.template')
-                        </form>
+                        <div class="card-body">
+                            <!-- form start -->
+                            <form action="{{ route('videos.store') }}" method="post" accept-charset="UTF-8" id="video_form">
+                                @csrf
+                              @include('providers.footballs.videos.template')
+                            </form>
+                        </div>
                     </div>
                     <!-- /.card -->
 

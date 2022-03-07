@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Providers\Footballs;
 
 use App\Http\Controllers\Controller;
+use App\Models\Footballs\SocialNetwork;
 use App\Repositories\Providers\Footballs\SocialNetworkRepository;
 use App\Services\GetSession;
 use Illuminate\Http\Request;
@@ -85,9 +86,9 @@ class SocialNetworkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($socialNetwork)
+    public function edit(SocialNetwork $socialNetwork)
     {
-        return view('providers.footballs.social_networks.edit', ['detail' => $socialNetwork]);
+        return view('providers.footballs.social_networks.edit', ['socialNetwork' => $socialNetwork]);
     }
 
     /**
