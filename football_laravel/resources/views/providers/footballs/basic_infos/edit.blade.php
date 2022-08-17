@@ -46,11 +46,13 @@
                         </div>
                         <div class="card-body">
                             <!-- form start -->
-                            <form action="{{ route('footballs.update', $footballPlace->id) }}" method="post" accept-charset="UTF-8" id="football_form">
-                                @csrf
-                                @method('PUT')
+                            {!! Form::open(['method' => 'PUT', 'route' => ['footballs.update', $footballPlace->id], 'id' => 'football_form']) !!}
+{{--                            <form action="{{ route('footballs.update', $footballPlace->id) }}" method="post" accept-charset="UTF-8" id="football_form">--}}
+{{--                                @csrf--}}
+{{--                                @method('PUT')--}}
                                 @include('providers.footballs.basic_infos.template')
-                            </form>
+{{--                            </form>--}}
+                            {!! Form::close() !!}
                         </div>
                     </div>
                     <!-- /.card -->

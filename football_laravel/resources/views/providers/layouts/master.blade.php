@@ -39,7 +39,7 @@
     <!-- country -->
     <link rel="stylesheet" href="{{asset('assets/plugins/country/assets/css/geodatasource-countryflag.css')}}">
 
-    <link rel="stylesheet" href="{{ asset('assets/dist/css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/footballs/main.css') }}">
 
     @yield('css-content')
 
@@ -95,6 +95,7 @@
 {{--    <script src="{{ asset('assets/dist/js/demo.js') }}"></script>--}}
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 {{--    <script src="{{ asset('assets/dist/js/pages/dashboard.js') }}"></script>--}}
+    <script src="{{ asset('assets/footballs/main-f.js')  }}"></script>
 
     @yield('script-content')
 </head>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Providers\Footballs;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\FootballPlaceRequest;
 use App\Repositories\Providers\Footballs\FootballPlaceRepository;
 use Illuminate\Http\Request;
 
@@ -100,12 +101,12 @@ class FootballPlaceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FootballPlaceRequest $request, $id)
     {
-        //$request->merge(['user_id'=>Auth::user()->user_id]);
-        $credentials = $request->merge(['amenities'=> $request->amenities ? implode(',', $request->amenities) : '',
+        //$request->merge(['user_id'=>Auth::user()->user_id]);amenities
+        $credentials = $request->merge(['utilities'=> $request->utilities ? implode(',', $request->utilities) : '',
             'allow_view'=> $request->allow_view ? 1 : 0])
-            ->only(['user_id','name','phone','email','website','amenities','max_price','min_price','allow_view','lang']);
+            ->only(['user_id','name','phone','email','website','utilities','max_price','min_price','allow_view','lang']);
         $footballPlace = $this->repository->updateFootballPlace($credentials,$id);
         return response()->json([
             'status' => 200,

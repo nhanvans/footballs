@@ -58,7 +58,7 @@ $(document).ready(function() {
                 if(res.responseJSON.status == 422){
                     Swal.close();
                     // console.log(res.responseJSON.data.errors);
-                    printErrors(res.responseJSON.data.errors);
+                    printErrors(res.responseJSON.errors);
                 }else{
                     Swal.fire({
                         icon: 'error',
@@ -71,16 +71,6 @@ $(document).ready(function() {
 
     });
 
-    function onchangeCss(input){
-        $(input).next().attr('style','color: red;display:none;');
-    }
-
-    function printErrors(errors) {
-        for (let [key, value] of Object.entries(errors)) {
-            $("#error_"+key).replaceWith(`<p style="color: red;" id="error_${key}">${value[0]}</p>`);
-        }
-    }
-
     //setting phone pakage
     var input_phone_ct = document.querySelector("#phone");
     var iti = window.intlTelInput(input_phone_ct, {
@@ -89,7 +79,7 @@ $(document).ready(function() {
 
     $("#phone").on('change', function(){
         input_phone_ct.value =  iti.getNumber();
-        $("#phone").parent().next().attr('style','color: red;display:none;');
+        $("#phone").parent().next().attr('style','display:none;');
     })
 });
 //reload

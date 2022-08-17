@@ -1,15 +1,20 @@
 <div class="form-group">
-    <label for="name">Tên địa điểm</label>
-    <input type="text" name="name" class="form-control" id="name" placeholder="Tên địa điểm">
+    {!! Form::label('name', 'Tên địa điểm') !!}
+    {!! Form::text('name', isset($footballPlace) ? $footballPlace->name : '', ['class' => 'form-control', 'id' => 'name', 'placeholder' => 'Tên địa điểm']) !!}
+    <p id="error_name" style="display: none"></p>
 </div>
 
 <fieldset id="custom-fieldset">
     <legend>Tiện ích</legend>
     <div class="form-row">
+        @php
+            $arrFootballPlaceUtilities = isset($footballPlace) ? explode(',', $footballPlace->utilities) : [];
+        @endphp
         @foreach(trans('football.utilities') as $key => $value)
             <div class="checkbox col-sm-3" style="margin-top:0">
                 <label style="font-weight: 400;">
-                    <input type="checkbox" name="utilities[]" class="utilities" value="{!! $key !!}" id="utilities_{!! $key !!}">
+                    {!! Form::checkbox('utilities[]', $key, in_array($key, $arrFootballPlaceUtilities), ['class' => 'utilities', 'id' => 'utilities_'.$key]) !!}
+{{--                    <input type="checkbox" name="utilities[]" class="utilities" value="{!! $key !!}" id="utilities_{!! $key !!}">--}}
                     {!! $value !!}
                 </label>
             </div>
@@ -20,26 +25,29 @@
 <div class="row">
     <div class="col-md-3">
         <div class="form-group">
-            <label for="phone">Số điện thoại</label>
-            <input type="text" name="phone" class="form-control" id="phone" placeholder="000 0000 000">
+            {!! Form::label('phone', 'Số điện thoại') !!}
+            {!! Form::text('phone', isset($footballPlace) ? $footballPlace->phone : '', ['class' => 'form-control', 'id' => 'phone', 'placeholder' => '000 0000 000']) !!}
+            <p id="error_phone" style="display: none"></p>
         </div>
     </div>
     <div class="col-md-3">
         <div class="form-group">
-            <label for="website">website</label>
-            <input type="text" name="website" class="form-control" id="website" placeholder="www.aaa.bbb">
+            {!! Form::label('website', 'Website') !!}
+            {!! Form::text('website', isset($footballPlace) ? $footballPlace->website : '', ['class' => 'form-control', 'id' => 'website', 'placeholder' => 'www.aaa.bbb']) !!}
+            <p id="error_website" style="display: none"></p>
         </div>
     </div>
     <div class="col-md-3">
         <div class="form-group">
-            <label for="email">email</label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="aaa@aaa.aaa">
+            {!! Form::label('email', 'Email') !!}
+            {!! Form::email('email', isset($footballPlace) ? $footballPlace->email : '', ['class' => 'form-control', 'id' => 'email', 'placeholder' => 'aaa@aaa.aaa']) !!}
+            <p id="error_email" style="display: none"></p>
         </div>
     </div>
     <div class="col-md-3">
         <div class="form-group">
-            <label for="allow_view">Cho phép hiển thị <i class="fa fa-info-circle"></i> </label><br>
-            <input type="checkbox" id="allow_view" class="" name="allow_view" value="1" checked data-bootstrap-switch>
+            {!! Form::label('allow_view', 'Cho phép hiển thị ') !!}<i class="fa fa-info-circle"></i>  <br>
+            {!! Form::checkbox('allow_view', '1', isset($footballPlace) ? $footballPlace->allow_view : '', ['class' => '', 'id' => 'allow_view', 'data-bootstrap-switch']) !!}
         </div>
     </div>
 </div>
@@ -47,21 +55,23 @@
 <div class="row">
     <div class="col-md-6">
         <div class="form-group">
-            <label for="min_price">Giá thấp nhất</label>
-            <input type="number" name="min_price" class="form-control" id="min_price" placeholder="Giá thấp nhất">
+            {!! Form::label('min_price', 'Giá thấp nhất') !!}
+            {!! Form::number('min_price', isset($footballPlace) ? $footballPlace->min_price : '', ['class' => 'form-control', 'id' => 'min_price', 'placeholder' => 'Giá thấp nhất']) !!}
+            <p id="error_min_price" style="display: none"></p>
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group">
-            <label for="max_price">Giá cao nhất</label>
-            <input type="number" name="max_price" class="form-control" id="max_price" placeholder="Giá cao nhất">
+            {!! Form::label('max_price', 'Giá cao nhất') !!}
+            {!! Form::number('max_price', isset($footballPlace) ? $footballPlace->max_price : '', ['class' => 'form-control', 'id' => 'max_price', 'placeholder' => 'Giá cao nhất', 'onchange' => 'onchangeCss(this)']) !!}
+            <p id="error_max_price" style="display: none"></p>
         </div>
     </div>
 </div>
 
 <div class="row">
     <div class="col-md-12">
-        <button type="submit" class="btn btn-primary" style="width: 100%">Tiếp tục</button>
+        {!! Form::submit('Tiếp tục', ['class' => 'btn btn-primary', 'style' => 'width: 100%']) !!}
     </div>
 </div>
 

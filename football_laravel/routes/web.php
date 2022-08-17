@@ -26,23 +26,26 @@ Route::get('language/{lang}', function ($lang) {
     return back();
 })->name('langroute');
 
-Route::group(['middleware'=>['lang']], function(){
+Route::prefix('providers')->group(function () {
 
-    Route::resource('footballs', FootballPlaceController::class);
-    Route::resource('details', DetailController::class);
-    Route::resource('social-networks', SocialNetworkController::class);
-    Route::resource('locations', LocationController::class);
-    Route::resource('images', ImageController::class);
-    Route::resource('videos', VideoController::class);
-    Route::resource('open-times', OpenTimeController::class);
-    Route::resource('services', ServiceController::class);
-    Route::delete('services/delete', 'ServiceController@delete')->name('services.delete');
+    Route::group(['middleware'=>['lang']], function(){
 
-    Route::get('/', function () {
+        Route::resource('footballs', FootballPlaceController::class);
+        Route::resource('details', DetailController::class);
+        Route::resource('social-networks', SocialNetworkController::class);
+        Route::resource('locations', LocationController::class);
+        Route::resource('images', ImageController::class);
+        Route::resource('videos', VideoController::class);
+        Route::resource('open-times', OpenTimeController::class);
+        Route::resource('services', ServiceController::class);
+        Route::delete('services/delete', [ServiceController::class, 'delete'])->name('services.delete');
+
+        Route::get('/', function () {
 //    return view('welcome');
-        return view('providers.dashboards.index');
-    });
+            return view('providers.dashboards.index');
+        });
 
+    });
 
 });
 
