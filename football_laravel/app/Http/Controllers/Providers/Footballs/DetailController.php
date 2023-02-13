@@ -27,9 +27,8 @@ class DetailController extends Controller
     public function index(Request $request)
     {
         $footballPlaceId = $request->cookie('football_place_id');
-        $detail = $this->repository->getDetailByIdOrFootballPlaceId( null, $footballPlaceId);
-        if(isset($detail))
-        {
+        $detail = $this->repository->getDetailByIdOrFootballPlaceId(null, $footballPlaceId);
+        if (isset($detail)) {
             return $this->edit($detail);
         }
         return $this->create();
@@ -48,20 +47,21 @@ class DetailController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
 //        $request->merge(['user_id'=>Auth::user()->user_id]);
-        if($request->ajax()){
-            $request->merge(['football_place_id' => $request->cookie('football_place_id'),'lang'=>GetSession::getLocale()]);
+        if ($request->ajax()) {
+            $request->merge(['football_place_id' => $request->cookie('football_place_id'), 'lang' => GetSession::getLocale()]);
             $detail = $this->repository->createAndUpdate($request, null);
 
             return response()->json([
+                'success' => true,
                 'status' => 200,
-                'error' => null,
                 'message' => 'create success',
+                'error' => null,
                 'data' => $detail,
                 'view' => $this->controller->index($request)->render()
             ]);
@@ -72,7 +72,7 @@ class DetailController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -83,7 +83,7 @@ class DetailController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit(Detail $detail)
@@ -94,8 +94,8 @@ class DetailController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -104,9 +104,10 @@ class DetailController extends Controller
             $request->merge(['football_place_id' => $request->cookie('football_place_id'), 'lang' => GetSession::getLocale()]);
             $detail = $this->repository->createAndUpdate($request, $id);
             return response()->json([
+                'success' => true,
                 'status' => 200,
-                'error' => null,
                 'message' => 'update success',
+                'error' => null,
                 'data' => $detail,
                 'view' => $this->controller->index($request)->render()
             ]);
@@ -116,7 +117,7 @@ class DetailController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

@@ -136,7 +136,9 @@
     const remove = "Xoá";
     const cancel = "Huỷ";
     const yes = "Đồng ý";
-    const save = "Lưu"
+    const save = "Lưu";
+    const save_sucess = "Thêm thành công";
+
 </script>
 </body>
 </html>

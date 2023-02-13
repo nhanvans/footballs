@@ -1,6 +1,6 @@
 <div class="form-group">
     {!! Form::label('name', 'Tên địa điểm') !!}
-    {!! Form::text('name', isset($footballPlace) ? $footballPlace->name : '', ['class' => 'form-control', 'id' => 'name', 'placeholder' => 'Tên địa điểm']) !!}
+    {!! Form::text('name', isset($footballPlace) ? $footballPlace->name : '', ['class' => 'form-control', 'id' => 'name', 'placeholder' => 'Tên địa điểm', 'onchange' => 'onchangeCss(this)']) !!}
     <p id="error_name" style="display: none"></p>
 </div>
 
@@ -26,21 +26,21 @@
     <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('phone', 'Số điện thoại') !!}
-            {!! Form::text('phone', isset($footballPlace) ? $footballPlace->phone : '', ['class' => 'form-control', 'id' => 'phone', 'placeholder' => '000 0000 000']) !!}
+            {!! Form::text('phone', isset($footballPlace) ? $footballPlace->phone : '', ['class' => 'form-control', 'id' => 'phone', 'placeholder' => '000 0000 000', 'onchange' => 'onchangeCss(this)']) !!}
             <p id="error_phone" style="display: none"></p>
         </div>
     </div>
     <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('website', 'Website') !!}
-            {!! Form::text('website', isset($footballPlace) ? $footballPlace->website : '', ['class' => 'form-control', 'id' => 'website', 'placeholder' => 'www.aaa.bbb']) !!}
+            {!! Form::text('website', isset($footballPlace) ? $footballPlace->website : '', ['class' => 'form-control', 'id' => 'website', 'placeholder' => 'www.aaa.bbb', 'onchange' => 'onchangeCss(this)']) !!}
             <p id="error_website" style="display: none"></p>
         </div>
     </div>
     <div class="col-md-3">
         <div class="form-group">
             {!! Form::label('email', 'Email') !!}
-            {!! Form::email('email', isset($footballPlace) ? $footballPlace->email : '', ['class' => 'form-control', 'id' => 'email', 'placeholder' => 'aaa@aaa.aaa']) !!}
+            {!! Form::email('email', isset($footballPlace) ? $footballPlace->email : '', ['class' => 'form-control', 'id' => 'email', 'placeholder' => 'aaa@aaa.aaa', 'onchange' => 'onchangeCss(this)']) !!}
             <p id="error_email" style="display: none"></p>
         </div>
     </div>
@@ -56,7 +56,7 @@
     <div class="col-md-6">
         <div class="form-group">
             {!! Form::label('min_price', 'Giá thấp nhất') !!}
-            {!! Form::number('min_price', isset($footballPlace) ? $footballPlace->min_price : '', ['class' => 'form-control', 'id' => 'min_price', 'placeholder' => 'Giá thấp nhất']) !!}
+            {!! Form::number('min_price', isset($footballPlace) ? $footballPlace->min_price : '', ['class' => 'form-control', 'id' => 'min_price', 'placeholder' => 'Giá thấp nhất', 'onchange' => 'onchangeCss(this)']) !!}
             <p id="error_min_price" style="display: none"></p>
         </div>
     </div>

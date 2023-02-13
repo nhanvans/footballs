@@ -20,6 +20,7 @@ $(document).ready(function() {
                 Swal.fire({
                     title: loading_message,
                     allowOutsideClick: false,
+                    showConfirmButton: false,
                     onBeforeOpen: () => {
                         Swal.showLoading()
                     },
@@ -32,7 +33,7 @@ $(document).ready(function() {
                         $('#edit_tabs a').find('.active').children().click();
                         Swal.fire({
                             icon: 'success',
-                            title: "save_sucess",
+                            title: save_sucess,
                         }).then(()=>{
                             $("#phone").trigger('change');
                         })

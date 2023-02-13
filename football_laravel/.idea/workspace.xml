@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2e4a9553-0f9d-4ad3-95a0-e6f0469141bb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/football_laravel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/football_laravel.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/DetailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/DetailController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/FootballPlaceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs/FootballPlaceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/dist/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/footballs/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/FootballPlaceRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/FootballPlaceRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/footballs/js/basic-info.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/footballs/js/basic-info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/footballs/basic_infos/template.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/providers/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,18 +148,20 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Providers/Footballs" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\public\assets\footballs" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers" />
+      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\managers" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\app\Http\Controllers\Providers\Footballs" />
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\app\Repositories\Providers\Footballs" />
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\footballs\services" />
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\footballs\open_times" />
       <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\footballs\videos" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers" />
-      <recent name="C:\Users\hovan\Desktop\nhan_coding\football_laravel\resources\views\providers\managers" />
     </key>
   </component>
   <component name="RunManager">
@@ -211,7 +208,10 @@
       <workItem from="1660470949327" duration="7000" />
       <workItem from="1660623675434" duration="7797000" />
       <workItem from="1660729255036" duration="93000" />
-      <workItem from="1660729370512" duration="3264000" />
+      <workItem from="1660729370512" duration="7876000" />
+      <workItem from="1661432836936" duration="4096000" />
+      <workItem from="1663670479358" duration="2384000" />
+      <workItem from="1663810365811" duration="3001000" />
     </task>
     <servers />
   </component>
@@ -219,17 +219,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="279" y="63" key="SettingsEditor" timestamp="1660742523924">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="279" y="63" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1660742523924" />
     <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1660736960419">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="93" y="93" width="1350" height="648" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1660736960419" />
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1660731919885">
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog" timestamp="1663810365659">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1660731919885" />
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1660736597838">
+    <state x="477" y="246" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1663810365659" />
+    <state x="474" y="51" width="588" height="732" key="find.popup" timestamp="1663812733151">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1660736597838" />
+    <state x="474" y="51" width="588" height="732" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1663812733151" />
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup" timestamp="1663812783050">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="431" y="155" width="672" height="678" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1663812783050" />
   </component>
 </project>

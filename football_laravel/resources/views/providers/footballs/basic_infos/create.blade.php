@@ -52,10 +52,12 @@
                         </div>
                         <div class="card-body">
                             <!-- form start -->
-                            <form action="{{ route('footballs.store') }}" method="post" accept-charset="UTF-8" id="football_form">
-                                @csrf
+                            {!! Form::open(['method' => 'post', 'route' => 'footballs.store', 'id' => 'football_form', 'accept-charset' => 'UTF-8']) !!}
+{{--                            <form action="{{ route('footballs.store') }}" method="post" accept-charset="UTF-8" id="football_form">--}}
+{{--                                @csrf--}}
                               @include('providers.footballs.basic_infos.template')
-                            </form>
+{{--                            </form>--}}
+                            {!! Form::close() !!}
                         </div>
                     </div>
                     <!-- /.card -->

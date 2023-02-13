@@ -49,7 +49,7 @@ class FootballPlaceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FootballPlaceRequest $request)
     {
 //        $request->merge(['user_id'=>Auth::user()->user_id]);
         if($request->ajax()){
@@ -59,9 +59,10 @@ class FootballPlaceController extends Controller
             $footballPlace = $this->repository->createFootballPlace($credentials);
 
             return response()->json([
+                'success' => true,
                 'status' => 200,
-                'error' => null,
                 'message' => 'create success',
+                'error' => null,
                 'data' => $footballPlace,
                 'view' => view('providers.footballs.details.create')->render()
             ])->withCookie('football_place_id', $footballPlace->id);
@@ -109,9 +110,10 @@ class FootballPlaceController extends Controller
             ->only(['user_id','name','phone','email','website','utilities','max_price','min_price','allow_view','lang']);
         $footballPlace = $this->repository->updateFootballPlace($credentials,$id);
         return response()->json([
+            'success' => true,
             'status' => 200,
-            'error' => null,
             'message' => 'update success',
+            'error' => null,
             'data' => $footballPlace,
 //            'view' => $this->controller->index($request)->render()
         ])->withCookie('football_place_id', $footballPlace->id);
